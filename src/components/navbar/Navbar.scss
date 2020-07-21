@@ -1,0 +1,88 @@
+@import "../../styles/variables.scss";
+
+nav.app-navbar {
+  z-index: 1000;
+  position: fixed;
+  left: 0;
+  top: 0;
+
+  width: 100%;
+  height: $navbar-desktop-height;
+  display: flex;
+  justify-content: center;
+
+  .navbar-content {
+    position: relative;
+    margin-top: 10px;
+    background-color: $red;
+    padding: 0 $content-padding 0 1em;
+    max-width: $max-content-width;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .navbar-logo {
+    display: flex;
+    padding: 10px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    cursor: pointer;
+
+    object {
+      max-width: 50px;
+      height: auto;
+
+      @include breakpoint(mobile) {
+        max-height: 40px;
+      }
+    }
+  }
+
+  .menu-toggle {
+    display: flex;
+    z-index: 1100;
+    cursor: pointer;
+
+    object {
+      height: 18px;
+    }
+
+    object[data-icon-name="close"] {
+      height: 23px;
+    }
+  }
+
+  .search-wrapper {
+    display: flex;
+
+    .search-toggle {
+      cursor: pointer;
+
+      object {
+        height: 23px;
+      }
+    }
+  }
+
+  .nav-menu {
+    position: absolute;
+    z-index: 1100;
+    display: flex;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: darken($color: $red, $amount: 5);
+  }
+
+  @include breakpoint(tablet) {
+    height: $navbar-mobile-height;
+
+    .navbar-content {
+      margin-top: 0;
+    }
+  }
+}

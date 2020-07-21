@@ -1,0 +1,39 @@
+// colours
+$grey-light: #f5f5f5;
+$coal: #202020;
+$teal: #33aaae;
+$red: rgb(211, 66, 86);
+
+// dimensions
+$max-content-width: 1170px;
+$navbar-desktop-height: 80px;
+$navbar-mobile-height: 60px;
+
+// padding, margins
+$content-padding: 1.5em;
+
+// media queries, breakpoints
+$breakpoints: (
+  phone: 576px,
+  tablet: 768px,
+  desktop: 992px,
+) !default;
+
+$breakpoint-mobile: 576px;
+$breakpoint-desktop: 992px;
+
+@mixin breakpoint($media) {
+  @if $media == mobile {
+    @media only screen and (max-width: $breakpoint-mobile) {
+      @content;
+    }
+  } @else if $media == tablet {
+    @media only screen and (max-width: $breakpoint-desktop - 1) {
+      @content;
+    }
+  } @else if $media == desktop {
+    @media only screen and (min-width: $breakpoint-desktop) {
+      @content;
+    }
+  }
+}

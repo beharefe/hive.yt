@@ -1,0 +1,18 @@
+.hiveyt-loading {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  .loading-description {
+      margin-top: 1em;
+      font-size: 1.25em;
+  }
+
+  .loading-image {
+      max-width: 200px;
+      width: 100%;
+      height: auto;
+  }
+}

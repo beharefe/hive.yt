@@ -1,0 +1,64 @@
+@import "./variables.scss";
+@import "./typography.scss";
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: $grey-light;
+  color: $coal;
+}
+
+#root {
+  display: flex;
+  justify-content: center;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  color: $teal;
+
+  &:hover {
+    color: darken($color: $teal, $amount: 15) !important;
+  }
+}
+
+.labelled-item {
+  display: flex;
+  flex-direction: column;
+  color: $coal;
+  margin-bottom: 1em;
+
+  &.flat {
+    flex-direction: row;
+    align-items: center;
+
+    label {
+      margin-right: 5px;
+      margin-bottom: 0;
+    }
+  }
+
+  label {
+    font-size: 0.9em;
+    color: gray;
+    margin-bottom: 5px;
+  }
+
+  &:not(:last-child) {
+    margin-right: 1.5em;
+  }
+
+  a {
+    color: $teal;
+  }
+}
+
+span.currency-symbol {
+  margin-left: 3px;
+  color: $red;
+}

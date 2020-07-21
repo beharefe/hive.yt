@@ -1,0 +1,77 @@
+@import "../../styles/variables.scss";
+
+.recent-blocks-wrapper {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.recent-block-item {
+  min-width: 200px;
+  padding: 10px;
+  margin: 10px 0;
+  background-color: white;
+  box-shadow: 0px 1px 20px 20px rgba(223, 223, 223, 0.3);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 5px;
+
+  a {
+    text-decoration: none;
+  }
+
+  .number-wrapper {
+    display: flex;
+    justify-content: space-between;
+
+    a {
+      &:before {
+        content: "#";
+        color: gray;
+      }
+    }
+
+    .transactions-count {
+    }
+  }
+
+  .witness {
+    &:before {
+      color: gray;
+      content: "by ";
+    }
+  }
+
+  .divider {
+    margin: 0.5em 0;
+    height: 1px;
+    width: 100%;
+    background-color: gainsboro;
+    align-self: center;
+  }
+}
+
+@include breakpoint(tablet) {
+  .recent-blocks-wrapper {
+    flex-direction: row-reverse;
+    position: absolute;
+    overflow-x: overlay;
+    // TODO: ADD horizontal scroll 
+
+    .recent-block-item {
+      margin: 0 3px;
+      width: auto;
+      min-width: auto;
+      padding: 5px;
+      box-shadow: none;
+
+      .transactions-count {
+        display: none;
+      }
+
+      .witness {
+        white-space: nowrap;
+      }
+    }
+  }
+}

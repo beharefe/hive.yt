@@ -1,0 +1,75 @@
+@import "../../styles/variables.scss";
+
+.hiveyt-landing {
+  display: flex;
+
+  .box.blockchain {
+    flex: 1;
+    padding-right: 1em;
+  }
+
+  .supply-info,
+  .blockchain-info,
+  .market-info {
+    display: flex;
+    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .last-irreversible {
+    display: flex;
+    font-weight: bold;
+
+    &::before {
+      content: "";
+      margin-top: 6px;
+      margin-right: 5px;
+      height: 10px;
+      width: 10px;
+      border-radius: 50%;
+    }
+
+    &.green {
+      &::before {
+        background-color: green;
+      }
+    }
+    &.orange {
+      &::before {
+        background-color: orange;
+      }
+    }
+    &.red {
+      &::before {
+        background-color: red;
+      }
+    }
+  }
+
+  @include breakpoint(tablet) {
+    flex-direction: column-reverse;
+    .box.blockchain {
+      padding-right: 0;
+    }
+
+    .box.recent-blocks {
+      height: 165px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .supply-info,
+    .blockchain-info,
+    .market-info {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @include breakpoint(mobile) {
+    .supply-info,
+    .market-info {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+}

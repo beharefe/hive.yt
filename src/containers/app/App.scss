@@ -1,0 +1,13 @@
+@import "../../styles/variables.scss";
+
+.hiveyt-app {
+  max-width: $max-content-width;
+  width: 100% !important;
+  padding: calc(#{$navbar-desktop-height} + #{$content-padding})
+    $content-padding $content-padding $content-padding;
+
+  @include breakpoint(tablet) {
+    padding: calc(#{$navbar-mobile-height} + #{$content-padding})
+      $content-padding $content-padding $content-padding;
+  }
+}
